@@ -1,6 +1,6 @@
 #headless service, normal service and statefulset
 apiVersion: v1
-kind: statefulset
+kind: Service
 metadata:
   name: mysql
   namespace: expense
