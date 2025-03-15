@@ -93,6 +93,13 @@ spec:
       containers:
       - name: frontend
         image: lakshman143/frontend:1.3.0
+        resources:
+          requests:
+            cpu: "64m"
+            memory: "250Mi"
+          limits:
+            cpu: "128m"
+            memory: "500Mi"
         ports:
         - containerPort: 8080
         volumeMounts:
@@ -102,7 +109,7 @@ spec:
           readOnly: true
       volumes:
       - name: nginx
-        configMap:
+        configMap:     
           name: nginx
           items:
             - key: nginx.conf
